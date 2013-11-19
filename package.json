@@ -1,0 +1,13 @@
+{
+  "description": "Add support for Superscript",
+  "name": "ep_superscript",
+  "version": "0.0.1",
+  "author": {
+    "name": "John McLear",
+    "email": "john@mclear.co.uk"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
