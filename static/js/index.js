@@ -11,6 +11,22 @@ var postAceInit = function(hook, context){
   })
 };
 
+exports.aceEditEvent = function(hook, call, info, rep, attr){
+  // If it's not a click or a key event and the text hasn't changed then do nothing
+  if(!(call.callstack.type == "handleClick") && !(call.callstack.type == "handleKeyEvent") && !(call.callstack.docTextChanged)){
+    return false;
+  }
+  setTimeout(function(){ // avoid race condition..
+    // the caret is in a new position..  Let's do some funky shit
+    if ( call.editorInfo.ace_getAttributeOnSelection("superscript") ) {
+      // show the button as being depressed..  Not sad, but active.. You know the drill bitches.
+      $('.superscript > a').addClass('activeButton');
+    }else{
+      $('.superscript > a').removeClass('activeButton');
+    }
+  },250);
+}
+
 // Our superscript attribute will result in a superscript:1 class
 function aceAttribsToClasses(hook, context){
   if(context.key == 'superscript'){
