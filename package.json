@@ -1,6 +1,6 @@
 {
-  "description": "Add support for Superscript",
-  "name": "ep_superscript",
+  "description": "Add support for Sections",
+  "name": "ep_sections",
   "version": "0.0.2",
   "author": {
     "name": "John McLear",

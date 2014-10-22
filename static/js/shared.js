@@ -5,7 +5,7 @@ var collectContentPre = function(hook, context){
   var state = context.state;
 
   if(tname == "sup"){
-    context.cc.doAttrib(state, "superscript");
+    context.cc.doAttrib(state, "section-block");
   }
 };
 
@@ -16,7 +16,7 @@ var collectContentPost = function(hook, context){
   var tagIndex = tname;
 
   if(tagIndex >= 0){
-    delete lineAttributes['superscript'];
+    delete lineAttributes['section-block'];
   }
 };
 

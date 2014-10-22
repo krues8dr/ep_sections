@@ -1,0 +1,29 @@
+#section-button {
+	font-size: 1.4em;
+	color: #666;
+}
+
+.section-heading {
+	background-color: #fffcf0;
+	/* background-color: rgba(255,153,0, 0.6); */
+}
+
+.section-heading::before {
+	content: 'HEADING';
+	font-size: 0.9em;
+	border: 1px solid #fc0;
+	border-right: none;
+}
+
+.section-heading::after {
+	content: 'HEADING';
+	font-size: 0.9em;
+	border: 1px solid #f90;
+	border-left: none;
+}
+
+.section-block {
+	background-color: #fffcf0;
+	background-color: rgba(255,153,0, 0.6);
+	border: 1px dashed #fffcf0;
+}
