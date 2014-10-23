@@ -20,17 +20,17 @@ exports.aceEditEvent = function(hook, call, info, rep, attr){
     // the caret is in a new position..  Let's do some funky shit
     if ( call.editorInfo.ace_getAttributeOnSelection("sectionblock") ) {
       // show the button as being depressed..  Not sad, but active.. You know the drill bitches.
-      $('.sectionblock > a').addClass('activeButton');
+      $('#section-button > a').addClass('activeButton');
     }else{
-      $('.sectionblock > a').removeClass('activeButton');
+      $('#section-button > a').removeClass('activeButton');
     }
   },250);
 }
 
-// Our sectionblock attribute will result in a sectionblock:1 class
+// Our sectionblock attribute will result in a section-block class
 function aceAttribsToClasses(hook, context){
   if(context.key == 'sectionblock'){
-    return ['sectionblock:' + 1 ];
+    return ['section-block' ];
   }
 }
 
@@ -42,15 +42,17 @@ exports.addCSS = function () {
 exports.aceCreateDomLine = function(name, context){
   var cls = context.cls;
   var domline = context.domline;
-  var sectionblock = /(?:^| )sectionblock:([A-Za-z0-9]*)/.exec(cls);
+  var sectionblock = /(?:^| )section-block/.exec(cls);
   var tagIndex;
   if (sectionblock){
     tagIndex = true;
   }
 
   if (tagIndex){
+    console.log('aceCreateDomLine:cls', cls);
+    // cls += ' section-block';
     var modifier = {
-      extraOpenTags: '<span class="section-block">',
+      extraOpenTags: '<span>',
       extraCloseTags: '</span>',
       cls: cls
     };

@@ -6,7 +6,7 @@ exports.eejsBlock_editbarMenuLeft = function (hook_name, args, cb) {
 }
 
 function getInlineStyle(sectionblock) {
-  return "sectionblock: "+sectionblock+";";
+  return "section-block;";
 }
 
 exports.addStyles = function (name, args, cb) {
@@ -29,7 +29,7 @@ function _analyzeLine(alineAttrs, apool) {
     var opIter = Changeset.opIterator(alineAttrs);
     if (opIter.hasNext()) {
       var op = opIter.next();
-      header = Changeset.opAttributeValue(op, 'sectionblock', apool);
+      header = Changeset.opAttributeValue(op, 'section-block', apool);
     }
   }
   return header;

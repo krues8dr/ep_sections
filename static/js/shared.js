@@ -3,9 +3,9 @@ var _ = require('ep_etherpad-lite/static/js/underscore');
 var collectContentPre = function(hook, context){
   var tname = context.tname;
   var state = context.state;
-
-  if(tname == "sup"){
-    context.cc.doAttrib(state, "section-block");
+console.log('collectContentPre', tname, state);
+  if(tname == "span"){
+    context.cc.doAttrib(state, "sectionBlock");
   }
 };
 
