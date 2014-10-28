@@ -6,7 +6,7 @@ exports.eejsBlock_editbarMenuLeft = function (hook_name, args, cb) {
 }
 
 function getInlineStyle(sectionblock) {
-  return "section-block;";
+  return "sectionblock;";
 }
 
 exports.addStyles = function (name, args, cb) {
@@ -19,7 +19,7 @@ exports.getLineHTMLForExport = function (hook, context) {
   var header = _analyzeLine(context.attribLine, context.apool);
   if (header) {
     var inlineStyle = getInlineStyle(header);
-    return "<span class=\"section-block\">" + context.text.substring(1) + "</span>";
+    return "<span class=\"sectionblock\">" + context.text.substring(1) + "</span>";
   }
 }
 
@@ -29,7 +29,7 @@ function _analyzeLine(alineAttrs, apool) {
     var opIter = Changeset.opIterator(alineAttrs);
     if (opIter.hasNext()) {
       var op = opIter.next();
-      header = Changeset.opAttributeValue(op, 'section-block', apool);
+      header = Changeset.opAttributeValue(op, 'sectionblock', apool);
     }
   }
   return header;

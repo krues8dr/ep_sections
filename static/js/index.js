@@ -27,10 +27,10 @@ exports.aceEditEvent = function(hook, call, info, rep, attr){
   },250);
 }
 
-// Our sectionblock attribute will result in a section-block class
+// Our sectionblock attribute will result in a sectionblock class
 function aceAttribsToClasses(hook, context){
   if(context.key == 'sectionblock'){
-    return ['section-block' ];
+    return ['sectionblock' ];
   }
 }
 
@@ -42,7 +42,7 @@ exports.addCSS = function () {
 exports.aceCreateDomLine = function(name, context){
   var cls = context.cls;
   var domline = context.domline;
-  var sectionblock = /(?:^| )section-block/.exec(cls);
+  var sectionblock = /(?:^| )sectionblock/.exec(cls);
   var tagIndex;
   if (sectionblock){
     tagIndex = true;
@@ -50,7 +50,7 @@ exports.aceCreateDomLine = function(name, context){
 
   if (tagIndex){
     console.log('aceCreateDomLine:cls', cls);
-    // cls += ' section-block';
+    // cls += ' sectionblock';
     var modifier = {
       extraOpenTags: '<span>',
       extraCloseTags: '</span>',

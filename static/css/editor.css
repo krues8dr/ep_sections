@@ -22,8 +22,26 @@
 	border-left: none;
 }
 
-.section-block {
+.sectionblock {
 	background-color: #fffcf0;
 	background-color: rgba(255,153,0, 0.6);
 	border: 1px dashed #fffcf0;
+	display: block;
+	padding: 5px 10px;
+}
+
+.sectionblock::before {
+	content: 'SECTION';
+	color: #996;
+	display: block;
+	padding: 5px 0;
+	font-size: 0.9em;
+}
+
+.sectionblock::after {
+	content: '/SECTION';
+	color: #996;
+	display: block;
+	padding: 5px 0;
+	font-size: 0.9em;
 }

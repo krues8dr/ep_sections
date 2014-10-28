@@ -5,7 +5,7 @@ var collectContentPre = function(hook, context){
   var state = context.state;
 console.log('collectContentPre', tname, state);
   if(tname == "span"){
-    context.cc.doAttrib(state, "sectionBlock");
+    context.cc.doAttrib(state, "sectionblock");
   }
 };
 
@@ -14,9 +14,9 @@ var collectContentPost = function(hook, context){
   var state = context.state;
   var lineAttributes = state.lineAttributes
   var tagIndex = tname;
-
+console.log('collectContentPost', tname, state, lineAttributes);
   if(tagIndex >= 0){
-    delete lineAttributes['section-block'];
+    delete lineAttributes['sectionblock'];
   }
 };
 
