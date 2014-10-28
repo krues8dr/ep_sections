@@ -3,8 +3,9 @@ var _ = require('ep_etherpad-lite/static/js/underscore');
 var collectContentPre = function(hook, context){
   var tname = context.tname;
   var state = context.state;
-console.log('collectContentPre', tname, state);
-  if(tname == "span"){
+console.log('collectContentPre', tname, state, context);
+  if(/(?:^| )sectionblock/.exec(context.cls)){
+    console.log('Success');
     context.cc.doAttrib(state, "sectionblock");
   }
 };
